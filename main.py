@@ -13,7 +13,7 @@ model = ChatGoogleGenerativeAI(
 
 # set header and title for page
 st.set_page_config(page_title="Gemini Research Tool!")
-st.header("🔍 Research Tool")
+st.header("🔍 AI Research Tool")
 
 #take user input
 user_input = st.text_input("Enter your query: "
@@ -29,4 +29,13 @@ if st.button("submit"):
             result = model.invoke(user_input)
             st.subheader("📄 Response:")
             st.write(result.content)
-        
+            
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <a href="https://github.com/kishoresahoo2050/StreamLitChat" target="_blank">GitHub</a> |
+        Built By Kishore Sahoo
+    </div>
+    """,
+    unsafe_allow_html=True
+)
